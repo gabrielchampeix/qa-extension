@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page QA Pins</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Page QA Pins</h1>
+      <p class="subtitle">Pin comments on the current page</p>
+    </header>
+
+    <section class="controls">
+      <label class="toggle-row">
+        <span>QA mode</span>
+        <input type="checkbox" id="qa-toggle" />
+      </label>
+      <button id="add-pin-btn" class="btn btn-primary" disabled>Add pin to page</button>
+    </section>
+
+    <section class="pin-list-section">
+      <h2>Comments on this page</h2>
+      <p id="page-url" class="page-url"></p>
+      <ul id="pin-list" class="pin-list"></ul>
+      <p id="empty-state" class="empty-state">No comments yet. Enable QA mode and add a pin.</p>
+    </section>
+
+    <footer class="popup-footer">
+      <p id="sync-status" class="sync-status"></p>
+      <button type="button" id="open-options" class="link-btn">Notion settings</button>
+    </footer>
+
+    <script src="../shared/url.js"></script>
+    <script src="../shared/pin.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

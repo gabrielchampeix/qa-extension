@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page QA Pins — Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Notion settings</h1>
+      <p class="intro">
+        Paste your integration token and database ID below. First, create a
+        <strong>QA Comments</strong> table in Notion with columns: Title, Description,
+        Reporter, Pin ID, Page URL, Anchor, Number, Screenshot — then connect your
+        integration via <strong>⋯ → Connections</strong> on that database.
+      </p>
+
+      <form id="settings-form">
+        <label>
+          Integration token
+          <input
+            type="password"
+            id="notion-token"
+            placeholder="secret_..."
+            autocomplete="off"
+          />
+          <span class="hint">From notion.so/my-integrations → your integration → Internal Integration Secret</span>
+        </label>
+
+        <label>
+          Database ID
+          <input
+            type="text"
+            id="notion-database-id"
+            placeholder="32-character ID from the database URL"
+            autocomplete="off"
+          />
+          <span class="hint">The part of the URL after your workspace name (with or without dashes)</span>
+        </label>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="button" id="test-btn" class="btn btn-secondary">Test connection</button>
+        </div>
+      </form>
+
+      <p id="status" class="status" role="status"></p>
+    </main>
+
+    <script src="../shared/url.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

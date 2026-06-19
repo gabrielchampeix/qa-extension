@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Page QA Pins",
+  "version": "0.5.1",
+  "description": "Pin comments on any page for QA review. Syncs to Notion.",
+  "permissions": ["activeTab", "storage", "scripting", "tabs"],
+  "host_permissions": ["<all_urls>", "https://api.notion.com/*"],
+  "options_ui": {
+    "page": "src/options/options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "Page QA Pins",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/shared/url.js", "src/shared/pin.js", "src/content/pins.js"],
+      "css": ["src/content/overlay.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
