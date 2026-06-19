@@ -18,21 +18,3 @@ Pin comments on any web page for QA review. Each pin saves a cropped screenshot 
 5. Enter your comment and save
 
 Pins appear as numbered markers. Click a marker to view, edit, or delete a comment.
-
-## Project structure
-
-```
-chrome-qa-extension/
-├── manifest.json
-├── icons/
-├── src/
-│   ├── background/service-worker.js   # Storage & messaging
-│   ├── content/pins.js                # Pin overlay on pages
-│   ├── content/overlay.css
-│   └── popup/                         # Extension popup UI
-```
-
-## Next steps
-
-- Notion API integration
-- Optional Slack notifications
